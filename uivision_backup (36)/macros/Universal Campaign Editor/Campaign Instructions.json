@@ -1,0 +1,246 @@
+{
+  "Name": "Campaign Instructions",
+  "CreationDate": "2023-8-8",
+  "Commands": [
+    {
+      "Command": "comment",
+      "Target": "SETUP",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "campaign_name",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [\"Email\", \"SMS\"];",
+      "Value": "delivery_method",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "send_option",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${send_option} == \"Scheduled\" || ${send_option} == \"Recurring\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "run_date",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${send_option} == \"Recurring\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "frequency",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${send_option} == \"Automated\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "tag",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "days_after_tagged",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "hours_after_tagged",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${send_option} != \"\" | ${send_option} != \"Immediate\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "resend_period",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "sentiment_survey_1",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "sentiment_survey_2",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "sentiment_survey_3",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "sentiment_survey_4",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "sentiment_survey_5",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "CUSTOMIZE",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "email_subject",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "email_message",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "sms_message",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "negative_header",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "negative_subheader",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "negative_body",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "positive_header",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "positive_subheader",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "positive_body",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [];",
+      "Value": "follow_ups",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "DISTRIBUTE",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "google_percent",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "apartments_percent",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "apartment_ratings_percent",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "yelp_percent",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "facebook_percent",
+      "Description": ""
+    }
+  ]
+}

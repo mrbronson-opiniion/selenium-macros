@@ -1,0 +1,78 @@
+{
+  "Name": "By User",
+  "CreationDate": "2023-8-8",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [\n  \"[Reviewer_Name],\\n\\nThanks for the [rating] stars! We appreciate you taking the time to share your feedback. Please let us know if we can do something to make your experience even better!\\n\\n[Contact_Name], [Contact_Title], [Company_Email]\",\n  \"Dear [Reviewer_Name],\\n\\nThank you for your positive feedback! Our goal is to continue to provide a [rating] star experience. We appreciate you and your business.\\n\\n[Contact_Name], [Company_Email]\",\n  \"[Reviewer_Name],\\n\\nWe’re happy that you’re happy! Thank you for taking the time to leave us a positive review. We’re so thankful for [Location_Name] customers like you.\\n\\n[Contact_Name], [Company_Email]\",\n  \"[Reviewer_Name],\\n\\nThere’s nothing better than hearing our customers’ positive feedback! Thanks for sharing your experience with us.\\n\\n[Contact_Name], [Contact_Title], [Company_Email]\",\n  \"We are so grateful for your positive review, [Reviewer_Name]!\\n\\nWe hope to always provide a great experience at [Location_Name]. Don’t hesitate to reach out if there’s a way we can improve serving you. Thanks again!\\n\\n[Contact_Name] / [Company_Email]\",\n  \"Dear [Reviewer_Name],\\n\\nThanks for the [rating] rating! We can’t wait to share your positive feedback with the rest of the team. We hope to continue to provide you with a quality experience.\\n\\n[Contact_Name], [Contact_Title], [Company_Email]\"\n];",
+      "Value": "pos_replies",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [\n  \"Dear [Reviewer_Name],\\n\\nWe are so sorry we did not meet your expectations. We’d love to make this situation right and provide a solution that will result in a more positive experience. Please Contact us directly at [Company_Email].\\n\\n[Contact_Name]\",\n  \"[Reviewer_Name],\\n\\nI’m so sorry — it sounds like we really missed the mark on your experience at [Location_Name]. Can we make it up to you? Please reach out to me directly at [Company_Email].\\n\\n[Contact_Name]\",\n  \"[Reviewer_Name],\\n\\nEven though it was a negative experience, we appreciate your feedback. We hope to learn from our mistakes and make things right. Please let me know how we can make it up to you. Feel free to contact me directly at [Company_Email]\\n\\n[Contact_Name]\",\n  \"[Reviewer_Name],\\n\\nIt sounds like your experience at [Location_Name] did not meet your expectations or the standard of service we provide to our customers. We hope we can make it up to you — please reach out to me at [Company_Email] at your earliest convenience!\\n\\n[Contact_Name]\",\n  \"Dear [Reviewer_Name],\\n\\nWe take your negative experience with us very seriously and sincerely apologize for it. We will be looking into this issue further. Please contact me at [Company_Email]. I hope to work with you to resolve any issues as soon as possible. I hope to hear from you soon!\\n\\n[Contact_Name], [Contact_Title]\",\n  \"[Reviewer_Name],\\n\\nWe apologize for your negative experience with us at [Location_Name]. We hope to connect with you soon to provide a better experience than the [rating] star service you received. Please reach out to me directly at [Company_Email] so I can make it right!\\n\\n[Contact_Name], [Contact_Title]\"\n];",
+      "Value": "neg_replies",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 6;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${n}]/span",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${location} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${n}]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Campaign Changes",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${n} + 1;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${n}]/span",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

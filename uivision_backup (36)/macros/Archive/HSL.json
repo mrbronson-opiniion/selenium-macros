@@ -1,0 +1,222 @@
+{
+  "Name": "HSL",
+  "CreationDate": "2023-8-8",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span[2]/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"infinite-scroll-container\"]/div/input",
+      "Value": "${property[0]}",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "text",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${text} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${property[0]}.match(/^([A-Za-z]| )*/)[0];",
+      "Value": "name",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "5000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/div/form/div/div/div/div/div/input",
+      "Value": "${name} Team",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/div/form/div/div[2]/div/div/div/input",
+      "Value": "Community Director",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div/i[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[2]/div/textarea",
+      "Value": "${P1}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[3]/div/textarea",
+      "Value": "${P2}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[4]/div/textarea",
+      "Value": "${P3}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[5]/div/textarea",
+      "Value": "${P4}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[6]/div/textarea",
+      "Value": "${P5}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[7]/div/textarea",
+      "Value": "${P6}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[8]/div/textarea",
+      "Value": "${P7}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[9]/div/textarea",
+      "Value": "${P8}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[10]/div/textarea",
+      "Value": "${P9}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[11]/div/textarea",
+      "Value": "${P10}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=tab-1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[2]/div/textarea",
+      "Value": "${N1}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[3]/div/textarea",
+      "Value": "${N2}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[4]/div/textarea",
+      "Value": "${N3}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[5]/div/textarea",
+      "Value": "${N4}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[6]/div/textarea",
+      "Value": "${N5}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[7]/div/textarea",
+      "Value": "${N6}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[8]/div/textarea",
+      "Value": "${N7}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[9]/div/textarea",
+      "Value": "${N8}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[10]/div/textarea",
+      "Value": "${N9}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div/div[11]/div/textarea",
+      "Value": "${N10}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div[2]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

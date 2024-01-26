@@ -1,0 +1,14 @@
+{
+  "creationDate": "2023-08-08",
+  "name": "Old_Style_Testsuites_(Deprecated)",
+  "macros": [
+    {
+      "macro": "Demo/Core/DemoAutofill.json",
+      "loops": 1
+    },
+    {
+      "macro": "Demo/Core/DemoFrames.json",
+      "loops": 1
+    }
+  ]
+}

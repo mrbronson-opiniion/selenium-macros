@@ -1,0 +1,96 @@
+{
+  "Name": "5_23",
+  "CreationDate": "2023-8-8",
+  "Commands": [
+    {
+      "Command": "comment",
+      "Target": "Change the Resident Satisfaction Campaign to Annually",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 4;",
+      "Value": "dd",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "row",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${row}]/td[2]/div",
+      "Value": "campaign",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${campaign} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${campaign} == \"Quarterly Resident Satisfaction\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Resident Satisfaction Changes",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "elseif",
+      "Target": "${campaign} == \"General Feedback\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "General Feedback Changes",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "elseif",
+      "Target": "${campaign} == \"Maintenance Request\" || ${campaign} == \"Move In\" || ${campaign} == \"Move Out\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Sentiment Survey Changes",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${row}+1;",
+      "Value": "row",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${row}]/td[2]/div",
+      "Value": "campaign",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

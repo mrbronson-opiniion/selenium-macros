@@ -1,0 +1,36 @@
+{
+  "Name": "Main",
+  "CreationDate": "2023-8-8",
+  "Commands": [
+    {
+      "Command": "comment",
+      "Target": "run // General Feedback",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Maintenance Request",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Move In",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Move Out",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Tour",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

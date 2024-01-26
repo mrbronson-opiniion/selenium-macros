@@ -1,0 +1,222 @@
+{
+  "Name": "Turn Off Text",
+  "CreationDate": "2023-8-8",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${n}]/td[2]/div",
+      "Value": "campaign",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${campaign} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${campaign} != \"Tour\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${n}]/td[2]/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-content-wrapper\"]/div[2]/div/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-body-container\"]/div/div/div/form/div/div/div/div[4]/div/div/div/div[2]/span/span/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 3;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li[2]",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li[2]",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "1.0",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-footer-container\"]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-footer-container\"]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-content-wrapper\"]/div[2]/div/span/div/span[2]/span[2]",
+      "Value": "type",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${type} != \"Expiring Lease\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-footer-container\"]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-content-wrapper\"]/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"campaign-content-wrapper\"]/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "1",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${n} + 1;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${n}]/td[2]/div",
+      "Value": "campaign",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[2]/table/thead/tr/th/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/span/span/button/span/span/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "linkText=Mark As Inactive",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[3]/div/div[3]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}
