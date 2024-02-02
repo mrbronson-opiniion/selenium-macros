@@ -1,0 +1,54 @@
+{
+  "Name": "AIR Negative Custom",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div/div/label/span/span",
+      "Value": "deselect all checkmark",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "click // xpath=//*[@id=\"pane-1\"]/div[2]/div[2]/div",
+      "Value": "Custom Replies dropdown",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div[2]/div[12]",
+      "Value": "Create New",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div[2]/div[12]/div/div/textarea",
+      "Value": "Hello [Reviewer_Name],\\nWe appreciate your review for [Location_Name]. We would like to get more information on your experience that resulted in your rating and see how we can improve your experience. Please contact us at ICanHelp@AirCommunities.com so we can assist. Thank you! – [Contact_Name]",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div[2]/div[13]",
+      "Value": "Create New",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div[2]/div[13]/div/div/textarea",
+      "Value": "Hello [Reviewer_Name], \\nI am sorry about your experience at our [Location_Name] resulted in the rating you provided. I would like to learn more about your review and find out how we can assist. Please contact us at ICanHelp@AirCommunities.com so we can assist. Thank you! – [Contact_Name]",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/div[2]/div[14]",
+      "Value": "Create New",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div[2]/div[14]/div/div/textarea",
+      "Value": "Hello [Reviewer_Name],\\nWe appreciate the feedback you have provided. We are interested in learning more about your experience that resulted in this review. May you please contact us at ICanHelp@AirCommunities.com so we can assist. Thank you! – [Contact_Name]",
+      "Description": ""
+    }
+  ]
+}

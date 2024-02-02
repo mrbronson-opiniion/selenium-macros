@@ -1,0 +1,48 @@
+{
+  "Name": "Main-Keller",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "kellr.csv",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span[2]/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"infinite-scroll-container\"]/div/input",
+      "Value": "${location[0]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Auto Replies",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

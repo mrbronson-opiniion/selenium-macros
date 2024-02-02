@@ -1,0 +1,300 @@
+{
+  "Name": "Edward Rose Review Auto Replies",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [\"We're so happy to see that your time in our community has resulted in such a high rating! Our team goes above and beyond to create a warm and welcoming environment for residents to enjoy. If you need help with anything, please don't hesitate to give our office a call!\",\"It's great to see that you love living in our community! If there's ever anything we can do to make your experience here even better, please reach out and we would be more than happy to help. Thank you!\",\"We so appreciate this wonderful review! Thank you so much for the kind words and high rating. If there's ever anything we can help you with, please don't hesitate to let us know!\",\"Thank you so much for your kind review! It's always great to receive such positive feedback. We are so glad your experience here was worthy of such a high rating. Please don't wait to stop by or give our office a call should you ever need anything!\",\"Thank you so much for this wonderful rating of our community! If you ever need anything, feel free to give our office a call and we will be eager to assist. Have a great day!\",\"We truly appreciate your feedback on our community! Ensuring residents have a positive experience is our highest priority. Please reach out to the office if we can ever be of assistance, we are more than happy to help! Thank you!\",\"Hi there, thank you so much for your positive feedback! Our team works hard to ensure residents have an excellent experience here. Your feedback confirms our team's efforts truly make an impact! Please give us a shout if we can ever be of assistance. Have a wonderful day!\",\"Hi there, thank you so much for your positive feedback! Our team works hard to ensure residents have an excellent experience here. Your feedback confirms our team's efforts truly make an impact! Please give us a shout if we can ever be of assistance. Have a wonderful day!\"];",
+      "Value": "positive_replies",
+      "Description": ""
+    },
+    {
+      "Command": "csvReadArray",
+      "Target": "lateadditions.csv",
+      "Value": "infile",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${infile}.length;",
+      "Value": "numrows",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 7;",
+      "Value": "currentrow",
+      "Description": ""
+    },
+    {
+      "Command": "while_v2",
+      "Target": "${currentrow} < ${numrows}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Search for the location",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div/div/input",
+      "Value": "${infile[${currentrow}][0]}",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "See if it exists",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div/div[3]/span",
+      "Value": "query",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${query} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${infile[${currentrow}][0]} isn't in the app.",
+      "Value": "blue",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "If the location exists in the app, continue on",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div/div[3]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[1]/div[2]/div/div[1]/button/span",
+      "Value": "isLinked",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "See if the location is linked to Google",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${isLinked} == \"Link to Google\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${infile[${currentrow}][0]} isn't linked to Google.",
+      "Value": "orange",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "//*[@id=\"app\"]/div[3]/div[2]/div/div[1]/div[2]/div/div[1]/div@class",
+      "Value": "autoreplyswitch",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "See if auto-replies are on",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${autoreplyswitch} == \"el-switch el-tooltip is-checked\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${infile[${currentrow}][0]}'s auto replies are already turned on.",
+      "Value": "purple",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Fill in contact info modal",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div/div/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/form/div/div/div/div/div/input",
+      "Value": "${infile[${currentrow}][1]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/form/div/div[2]/div/div/div/input",
+      "Value": "Manager",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/form/div[2]/div/div/div/div/input",
+      "Value": "${infile[${currentrow}][2]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/form/div[2]/div[2]/div/div/div/input",
+      "Value": "${infile[${currentrow}][3]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Add positive auto-replies",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div[4]/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 2;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "positive_replies",
+      "Value": "reply",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div[3]/div[${i}]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div[3]/div[${i}]/div/textarea",
+      "Value": "${reply}",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "for each positive_replies",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Turn off negative auto-replies",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=tab-1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div/div[2]/div/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "if auto replies aren't turned on",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "if Google is linked",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "if it exists in the app",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${currentrow} + 1;",
+      "Value": "currentrow",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

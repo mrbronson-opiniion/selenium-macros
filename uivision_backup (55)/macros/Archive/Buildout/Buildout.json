@@ -1,0 +1,474 @@
+{
+  "Name": "Buildout",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "comment",
+      "Target": "Tabs: Zoho | Google Search | Gmail",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "in Zoho, make sure you're on 'Edit Location'",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "in Google., make sure you've already searched something",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "1.5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${!clipboard}.search(\",\");",
+      "Value": "hasComma",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${!clipboard}.search(\"\\n\");",
+      "Value": "hasNewLine",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${hasComma} != -1 && ${hasNewLine} == -1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${!clipboard}.split(\",\");",
+      "Value": "myArray",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${myArray}[0];",
+      "Value": "account",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${myArray}[1];",
+      "Value": "integration",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"C&W\";",
+      "Value": "account",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Yardi\";",
+      "Value": "integration",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "prompt",
+      "Target": "Please type in the account and hit 'Confirm'@${account}",
+      "Value": "account",
+      "Description": ""
+    },
+    {
+      "Command": "prompt",
+      "Target": "Please type in the integration and hit 'Confirm'@${integration}",
+      "Value": "integration",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${account} + \",\" + ${integration};",
+      "Value": "returnValue",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${returnValue}",
+      "Value": "!clipboard",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Store all needed info for App Fields",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${!timeout_wait};",
+      "Value": "temp",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[17]/div[11]/div/div/table/tbody/tr/td[2]/div[1]/div[2]/div/form/div[2]/div/div[3]/div[7]/div/div[3]/div/div/div[1]/div[2]/div[1]/div[3]/div[3]/div/span[2]/a",
+      "Value": "manager",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${temp}",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=subvalue_COBJ1CF4",
+      "Value": "state",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=subvalue_COBJ1CF3",
+      "Value": "zip",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"btn_edit\"]/button",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_NAME_LInput",
+      "Value": "property",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF2_LInput",
+      "Value": "city",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF1_LInput",
+      "Value": "street",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF9_LInput",
+      "Value": "phone",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Check for ALN ID",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF153_LInput",
+      "Value": "aln_id",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aln_id} == \"\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Get ALN ID",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aln_id} != \"not found\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF153_LInput",
+      "Value": "${aln_id}",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Navigate to input area",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Input all App Fields",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF44_LInput",
+      "Value": "${property} - ${account}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF36_LInput",
+      "Value": "${property}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF12_LInput",
+      "Value": "${property}",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${manager} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF32_LInput",
+      "Value": "${manager}",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "else // ",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "type // id=Crm_CustomModule1_COBJ1CF32_LInput",
+      "Value": "not found",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"Crm_CustomModule1_COBJ1CF41\"]/div/lyte-drop-button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/lyte-drop-box/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF35_LInput",
+      "Value": "#545454",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF59_LInput",
+      "Value": "4",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Get Google Rotators & Scrapers",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Get Apartments.com Rotators & Scrapers",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "${website}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[15]/div/div/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${phone} == \"\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF9_LInput",
+      "Value": "${number}",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF30_LInput",
+      "Value": "${integration}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"Crm_CustomModule1_ATTACHMENTID_3\"]/button",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"lyteMenu_133785\"]/lyte-yield/lyte-menu-body/lyte-menu-item/lyte-menu-label",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "prompt",
+      "Target": "Manually add Button Color and upload logo in Zoho@then hit 'Confirm'",
+      "Value": "blah",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=crm_create_savebutn",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${account} == 'C&W'",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${manager}",
+      "Value": "blue",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "switch (${state}) {\ncase 'WA':\ncase 'OR': return 'Jennifer.Anderson1@cushwake.com,kayla.biehl@cushwake.com';\ncase 'NV': return 'emily.moholick@cushwake.com';\ncase 'CA':\ncase 'AZ': return 'leann.freeman@cushwake.com,Christina.Martinez1@cushwake.com,Desiree.Olivas@cushwake.com';\ncase 'AR':\ncase 'TX': return 'megan.clark@cushwake.com,maryfrances.Mascio@cushwake.com,amber.frisbie@cushwake.com';\ncase 'CO':\ncase 'NE':\ncase 'KS':\ncase 'MN':\ncase 'MO':\ncase 'WI':\ncase 'IL':\ncase 'IN':\ncase 'MI':\ncase 'OH':\ncase 'KY': return 'lindsey.bernhardt@cushwake.com';\ncase 'TN':\ncase 'AL':\ncase 'GA':\ncase 'MS':\ncase 'LA':\ncase 'FL': return 'heather.gottlieb@cushwake.com,mia.chigumira@cushwake.com';\ncase 'NY':\ncase 'MA':\ncase 'CT':\ncase 'PA':\ncase 'NJ':\ncase 'DE':\ncase 'MD':\ncase 'DC':\ncase 'VA':\ncase 'NC':\ncase 'SC': return 'heather.white@cushwake.com';\n}",
+      "Value": "recipients",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${recipients},moriahh@opiniion.com",
+      "Value": "blue",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${property}, Welcome to Opiniion!",
+      "Value": "purple",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${account} + \",\" + ${integration};",
+      "Value": "returnValue",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${returnValue}",
+      "Value": "!clipboard",
+      "Description": ""
+    }
+  ]
+}

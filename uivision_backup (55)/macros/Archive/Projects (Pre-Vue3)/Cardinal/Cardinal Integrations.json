@@ -1,0 +1,204 @@
+{
+  "Name": "Cardinal Integrations",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/label[3]/div/div/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Entrata Integration",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/div/div[4]/div/label/div/div/div/div/span/span/i@class",
+      "Value": "list_state",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${list_state} == \"el-select__caret el-input__icon el-icon-arrow-up\" || ${list_state} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/div/div[4]/div/label/div/div/div/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/div/div[4]/div/label/div/div/div/div/span/span/i@class",
+      "Value": "list_state",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return parseInt(${i})+1;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${n}]/div/div/ul/li",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${n}+1;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${n}]/div/div/ul/li/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "p",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${n}]/div/div/ul/li[${p}]/span",
+      "Value": "property",
+      "Description": "/html/body/div[5]/div[1]/div[1]/ul/li[1]"
+    },
+    {
+      "Command": "while",
+      "Target": "${property} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "name = ${property}.split(\" - \")[0];\nreturn name;",
+      "Value": "name",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${name} == ${location}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "break",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${p}+1;",
+      "Value": "p",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${n}]/div/div/ul/li[${p}]/span",
+      "Value": "property",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${property} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "prompt",
+      "Target": "Can't find the property in the prop list@${location[0]}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${n}]/div/div/ul/li[${p}]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[3]/div/div/button/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[3]/div/div/button/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    }
+  ]
+}

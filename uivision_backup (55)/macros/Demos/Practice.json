@@ -1,0 +1,48 @@
+{
+  "Name": "Practice",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Integration Notes\";",
+      "Value": "label",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "function findInputFieldByLabelText(labelText) {\n    // Find the label with the specified text\n    var xpathForLabel = \"//div[text()='\" + labelText + \"']\";\n    var labelElement = document.evaluate(xpathForLabel, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n\n    if (!labelElement) {\n        console.log(\"Label not found\");\n        return null;\n    }\n\n    // Assuming the input field is next in the DOM after the label\n    var xpathForInput = generateXPathForFollowingInput(labelElement);\n\n    var inputElement = document.evaluate(xpathForInput, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n\n    if (!inputElement) {\n        console.log(\"Input field not found\");\n        return null;\n    }\n\n    return xpathForInput;\n}\n\nfunction generateXPathForFollowingInput(labelElement) {\n    // Generate an XPath for the input field that follows the label\n    // This is a simple case and may need to be adjusted based on the actual HTML structure\n    return generateXPath(labelElement) + \"/following::input[1]\";\n}\n\nfunction generateXPath(element) {\n    // Utility function to generate XPath for a given DOM element\n    // This can be refined as per the specific requirements and DOM structure\n    if (element.id !== '') return 'id(\"' + element.id + '\")';\n    if (element === document.body) return element.tagName;\n\n    var ix = 0;\n    var siblings = element.parentNode.childNodes;\n    for (var i = 0; i < siblings.length; i++) {\n        var sibling = siblings[i];\n        if (sibling === element) return generateXPath(element.parentNode) + '/' + element.tagName + '[' + (ix + 1) + ']';\n        if (sibling.nodeType === 1 && sibling.tagName === element.tagName) ix++;\n    }\n}\n\n// Example usage\nreturn findInputFieldByLabelText(${label})\n",
+      "Value": "myxpath",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=el-id-9613-90",
+      "Value": "Thank you so much for visiting Yacht Club at Brickell! We hope you enjoyed the tour, and we'd love to hear your feedback. Please take a few seconds to tell us about your experience.",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "\n// Get the ul element by XPath\nlet xpath = \"/html/body/div[2]/div[14]/div/div/div[1]/ul\";\nlet ulElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\n\n// Check if the ul element was found\nif (!ulElement) {\n  console.error(\"Element not found for the given XPath\");\nreturn [];\n}\n\n// Regular expression to match the desired portion of the string\nlet regex = /res[0-9]{5,6}/;\n\n// Extract matching text portions from each li child and append to a list\nlet matchingTextList = [];\nlet liElements = ulElement.querySelectorAll(\"li\");\n\nliElements.forEach(li => {\n  let text = li.innerText || li.innerHTML;\n  let match = text.match(regex);\n  if (match) {\n    matchingTextList.push(match[0]);\n  }\n});\n\nreturn matchingTextList;\n",
+      "Value": "stuff",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "stuff",
+      "Value": "code",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${code}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

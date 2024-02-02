@@ -1,0 +1,384 @@
+{
+  "Name": "Duplicate Surveys",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "cardinal_survey.csv",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Copy Move Out Survey",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[1]/div[3]/div[2]/div[2]/div/div[1]/div/div[1]/div/div[2]/div[2]/span/span/button/span",
+      "Value": ">>actions",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[1]/div[3]/div/div",
+      "Value": ">>copy",
+      "Description": ""
+    },
+    {
+      "Command": "assertValue",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Copy of - Draft Move Out Survey",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[3]/div/div/div/input",
+      "Value": ">>location input",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 4;",
+      "Value": "dd",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${dd}]/div/div/ul/li[${i}]/span",
+      "Value": "item",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${item} != ${location[1]}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${dd}]/div/div/ul/li[${i}]/span",
+      "Value": "item",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${dd}]/div/div/ul/li[${i}]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${dd} + 1;",
+      "Value": "dd",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${location[1]}.split(\" - \")[0]",
+      "Value": "name",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Move Out Survey - ${name}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/button/span",
+      "Value": ">>next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": ">>save & finish",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Copy Tour Survey",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[2]/div/div[2]/div[2]/span/span/button/span",
+      "Value": ">>actions",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[3]/div[1]/div[3]/div/div",
+      "Value": ">>copy",
+      "Description": ""
+    },
+    {
+      "Command": "assertValue",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Copy of - Draft Tour Survey",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[3]/div/div/div/input",
+      "Value": ">>location input",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${dd}]/div/div/ul/li[${i}]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${dd} + 1;",
+      "Value": "dd",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Tour Survey - ${name}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/button/span",
+      "Value": ">>next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": ">>save & finish",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Copy Move In Survey",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[3]/div/div[2]/div[2]/span/span/button/span",
+      "Value": ">>actions",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[4]/div[1]/div[3]/div/div",
+      "Value": ">>copy",
+      "Description": ""
+    },
+    {
+      "Command": "assertValue",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Copy of - Draft Move In Survey",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[3]/div/div/div/input",
+      "Value": ">>location input",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${dd}]/div/div/ul/li[${i}]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${dd} + 1;",
+      "Value": "dd",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Move In Survey - ${name}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/button/span",
+      "Value": ">>next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": ">>save & finish",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Copy Maintenance Survey",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[4]/div/div[2]/div[2]/span/span/button/span",
+      "Value": ">>actions",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[5]/div[1]/div[3]/div/div",
+      "Value": ">>copy",
+      "Description": ""
+    },
+    {
+      "Command": "assertValue",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Copy of - Draft Maintenance Survey",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[3]/div/div/div/input",
+      "Value": ">>location input",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${dd}]/div/div/ul/li[${i}]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/input",
+      "Value": "Maintenance Survey - ${name}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/button/span",
+      "Value": ">>next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": ">>save & finish",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div[3]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

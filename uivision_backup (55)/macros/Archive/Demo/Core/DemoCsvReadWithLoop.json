@@ -1,0 +1,36 @@
+{
+  "Name": "DemoCsvReadWithLoop",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "fast",
+      "Value": "!replayspeed",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "The file ReadCSVTestData.csv is pre-installed with UI.Vision RPA.",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "csvRead",
+      "Target": "ReadCSVTestData.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Call subroutine for the actual form filling",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Sub/Sub_DemoCsvRead_FillForm",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

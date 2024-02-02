@@ -1,0 +1,12 @@
+{
+  "Name": "RAM Negative Custom",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div[2]/label[2]/span/span",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

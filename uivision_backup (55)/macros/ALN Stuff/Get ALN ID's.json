@@ -1,0 +1,216 @@
+{
+  "Name": "Get ALN ID's",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "total",
+      "Description": ""
+    },
+    {
+      "Command": "csvReadArray",
+      "Target": "aln_big.csv",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "row",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${row[0]};",
+      "Value": "app_id",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${row[1]};",
+      "Value": "property",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${row[2]};",
+      "Value": "city",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Get ALN ID",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aln_id} != \"not found\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://crm.zoho.com/crm/org638548319/search?searchword=blah&sModules=Leads%2CAccounts%2CPotentials%2CContacts%2CCustomModule1%2CCustomModule5%2CCustomModule6%2CCustomModule11%2CTasks%2CEvents%2CCalls%2CCustomModule2%2CNotes%2CCustomModule8%2CCustomModule10%2CCustomModule4%2CCustomModule12%2CLinkingModule25%2CInvoices&userOption=false",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=searchStr",
+      "Value": "${app_id}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"newgsearchouterdiv\"]/div[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "name=saverel",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[61]/div/div[2]/div/div[1]/div[1]/table[2]/tbody/tr/td/table/tbody/tr[2]/td[2]/a",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"ownerName_id\"]/lyte-text",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"btn_edit\"]/button/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "id=Crm_CustomModule1_COBJ1CF153_LInput",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF153_LInput",
+      "Value": "${aln_id}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"crm_create_savebutn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "2000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=titlecard_NAME",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "prompt",
+      "Target": "fix the stuff",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${total} + 1;",
+      "Value": "total",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${total} ALN ID's added.",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

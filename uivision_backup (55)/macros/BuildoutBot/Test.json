@@ -1,0 +1,24 @@
+{
+  "Name": "Test",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "run",
+      "Target": "Gather Data",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Get FB",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

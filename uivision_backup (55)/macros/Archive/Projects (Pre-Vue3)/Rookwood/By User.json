@@ -1,0 +1,66 @@
+{
+  "Name": "By User",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 6;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${n}]/span",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${location} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${n}]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Turn Off Text",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${n} + 1;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${n}]/span",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

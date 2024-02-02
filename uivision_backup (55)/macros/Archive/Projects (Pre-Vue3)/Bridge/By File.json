@@ -1,0 +1,54 @@
+{
+  "Name": "By File",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "bridge_locations.csv",
+      "Value": "locations",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "locations",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${location[0]}.slice(1, -1);",
+      "Value": "name",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"infinite-scroll-container\"]/div/input",
+      "Value": "${name}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Feedback Auto Replies",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

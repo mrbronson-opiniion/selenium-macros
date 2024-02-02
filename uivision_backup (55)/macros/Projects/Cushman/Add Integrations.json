@@ -1,0 +1,240 @@
+{
+  "Name": "Add Integrations",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "ram-ints.csv",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 11;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "row",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${row[0]}",
+      "Value": "code",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${row[1]}",
+      "Value": "location_id",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[3]/div/div/div/div[2]/div/div/div/div/input",
+      "Value": "${location_id}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Yardi Integration",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=/html/body/div[1]/div/div[2]@class",
+      "Value": "status",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${status} == \"loading\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=/html/body/div[1]/div/div[2]@class",
+      "Value": "status",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[${n}]/div/div/div[1]/ul/li[1]/span",
+      "Value": "n_test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${n_test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${n} + 1;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[${n}]/div/div/div[1]/ul/li[48]/span",
+      "Value": "n_test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "function findLiXPath(ulXPath, searchText) {\n    // Retrieve the <ul> element using the provided XPath\n    const xpathResult = document.evaluate(ulXPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);\n    const ulElement = xpathResult.singleNodeValue;\n\n    if (!ulElement) {\n        return \"#LNF\"\n    }\n\n    // Iterate over the <li> children of the <ul> element\n    const liElements = ulElement.getElementsByTagName('li');\n    for (let i = 0; i < liElements.length; i++) {\n        if (liElements[i].textContent.includes(searchText)) {\n            // Construct the XPath for the found <li> element using string concatenation\n            const liXPath = ulXPath + \"/li[\" + (i + 1) + \"]\";\n            console.log('Found LI with text \"' + searchText + '\": XPath = ' + liXPath);\n            return liXPath;\n        }\n    }\n\n    console.log('No LI found containing text \"' + searchText + '\"');\n    return \"#LNF\";\n}\n\n// Example usage\nconst ulXPath = \"/html/body/div[2]/div[${n}]/div/div/div[1]/ul\";\nconst searchText = ${code};\nreturn findLiXPath(ulXPath, searchText);",
+      "Value": "prop_path",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${prop_path} == \"#LNF\" || ${prop_path} == undefined",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[${n}]/div/div/div[1]/ul/li[${i}]/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${test}.split(\" - \")[1];",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} != ${code}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "/html/body/div[2]/div[${n}]/div/div/div[1]/ul/li[${i}]/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${test}.split(\" - \")[1];",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"/html/body/div[2]/div[${n}]/div/div/div[1]/ul/li[${i}]/span\";",
+      "Value": "prop_path",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=${prop_path}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[3]/div/div/button/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//div[3]/div/div/button/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 11;",
+      "Value": "n",
+      "Description": ""
+    },
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

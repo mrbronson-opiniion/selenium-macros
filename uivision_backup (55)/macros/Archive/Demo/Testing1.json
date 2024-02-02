@@ -1,0 +1,48 @@
+{
+  "Name": "Testing1",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${i++}]/td[2]/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${i}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]/div/div/div[16]/div/span[1]",
+      "Value": "channel",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "/html/body/div[2]/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[1]/div/div/div[17]/div/span[1]",
+      "Value": "channel",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div/div/div[5]/div[2]/div/div[4]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/div/p",
+      "Value": "I totally owe donuts. Thank you macro!",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "x = document.evaluate(\"/html/body/div[2]/div/div[1]/div[5]/div[2]/div/div[4]/div/div[2]/div/div/div/div[2]/div/div/div/div[2]/div/div[1]/p\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;\nx.innerHTML = \"DONUTS!\";",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

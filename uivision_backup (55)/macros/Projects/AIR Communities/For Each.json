@@ -1,0 +1,66 @@
+{
+  "Name": "For Each",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "aircamp.csv",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "row",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div/div/div/div/input",
+      "Value": "${row[0]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "function findRow(stryng) {\n    let xpath = '//*[@id=\"campaign-datatable\"]/div/div[3]/div/div/div/table/tbody/tr/td[2]/div';\n    let rows = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);\n    \n    for (let i = 0; i < rows.snapshotLength; i++) {\n        let row = rows.snapshotItem(i);\n        if (row.textContent.trim() === stryng) {\n            let tr = row.closest('tr');\n            return tr ? tr.rowIndex : null; // Returns the row index if found\n        }\n    }\n\n    return '#LNF'; // Returns null if not found\n}\n\nreturn findRow(\"Pre-Renewal\");",
+      "Value": "done",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${done} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Campaign Changes",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

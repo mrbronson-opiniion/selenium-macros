@@ -1,0 +1,114 @@
+{
+  "Name": "Link Apartments",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[2]/div/div[3]/table/tbody/tr/td[2]/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 13;",
+      "Value": "s",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "apartments_row",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div[2]/div/div[2]/div[13]/div[2]",
+      "Value": "source",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${source} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${source} == \"Apartments.com\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${s};",
+      "Value": "apartments_row",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${s} + 1;",
+      "Value": "s",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div[2]/div/div[2]/div[${s}]/div[2]",
+      "Value": "source",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${apartments_row} != 0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div[2]/div/div[2]/div[${apartments_row}]/div[3]/div/input",
+      "Value": "apartments_link",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "x = ${apartments_link}.match(/\\/[a-z0-9]{7}\\//)[0];\nreturn x.slice(1,-1);",
+      "Value": "listing_key",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div[2]/div/div[2]/div[8]/div/input",
+      "Value": "${listing_key}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div[2]/div/div[2]/div[8]/div[2]/div/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div/button/i",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

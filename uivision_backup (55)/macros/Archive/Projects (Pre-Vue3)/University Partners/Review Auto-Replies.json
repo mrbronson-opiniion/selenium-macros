@@ -1,0 +1,234 @@
+{
+  "Name": "Review Auto-Replies",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=/html/body/div[1]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/div/div[2]/div[2]@class",
+      "Value": "switch_status",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[3]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${switch_status} == \"el-switch auto-replies-modal--switch\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://app.opiniion.com/locationList",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[2]/div/div[3]/table/tbody/tr/td[2]/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div[2]/div/div[2]/div[13]/div[3]/div/input",
+      "Value": "google_url",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "${google_url}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "sourceExtract",
+      "Target": "regex=\\([0-9]{3}\\) [0-9]{3}-[0-9]{4}",
+      "Value": "phone",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://app.opiniion.com/userList",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div[3]/table/tbody/tr[${r}]/td[2]/div/span",
+      "Value": "user",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${user}.search(\"Info\") != -1;",
+      "Value": "is_info",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "!${is_info}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r}+1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div[3]/table/tbody/tr[${r}]/td[2]/div/span",
+      "Value": "user",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${user}.search(\"Info\") != -1;",
+      "Value": "is_info",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div[3]/table/tbody/tr[${r}]/td[2]/div/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=/html/body/div/div[3]/div[2]/div[1]/div[1]/div/form/div[3]/div/div/div/div/input",
+      "Value": "email",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://app.opiniion.com/reviews",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/div/div[2]/div[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[3]/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "property",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${property}.split(\" - \")[0];",
+      "Value": "property",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div/div/div/div/div/input",
+      "Value": "${property}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div/div[2]/div/div/div/input",
+      "Value": "Team",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div[2]/div/div/div/div/input",
+      "Value": "${email}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div[2]/div[2]/div/div/div/input",
+      "Value": "${phone}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[3]/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=tab-1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[3]/div/div[2]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

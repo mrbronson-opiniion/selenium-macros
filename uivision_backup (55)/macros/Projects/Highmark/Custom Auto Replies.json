@@ -1,0 +1,204 @@
+{
+  "Name": "Custom Auto Replies",
+  "CreationDate": "2024-2-1",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [\n  \"[Reviewer_Name],\\n\\nWe’d like to apologize for anything less than a positive experience with us. We’ve taken your feedback and will work hard to implement the needed changes at [Location_Name]. I’d love to make things right! Please reach out to me at your earliest convenience.\\n\\n[Contact_Name], [Contact_Title], [Company_Email]\",\n  \"Dear [Reviewer_Name],\\n\\nWe are so sorry we did not meet your expectations. We’d love to make this situation right and provide a solution that will result in a more positive experience. I hope to hear from you soon.\\n\\n[Contact_Name], [Contact_Title], [Company_Email]\",\n  \"Dear [Reviewer_Name],\\n\\nThank you for bringing this to our attention. We apologize for the experience you had at [Location_Name] and want to work to provide a solution for you. Please feel free to contact me at [Company_Phone]; I’d love to learn more about the situation and how we can fix it.\\n\\n[Contact_Name], [Contact_Title]\",\n  \"[Reviewer_Name],\\n\\nI’m so sorry — it sounds like we missed the mark on your experience at [Location_Name]. Can we make it up to you? Please reach out to me directly at [Company_Email].\\n\\n[Contact_Name], [Contact_Title]\",\n  \"Dear [Reviewer_Name],\\n\\nWe hear you. Thank you for taking the time to bring this to our attention. We apologize for the experience you had at [Location_Name] and want to fix it. Reach me directly at [Company_Phone].\\n\\n[Contact_Name], [Contact_Title]\",\n  \"[Reviewer_Name],\\n\\nEven though we did not meet your expectations, we appreciate your rating. We hope to learn from your candid feedback and make things right. Please let me know how I can make it up to you. Feel free to contact me directly at [Company_Email]\\n\\n[Contact_Name], [Contact_Title]\",\n  \"[Reviewer_Name],\\n\\nThank you for letting us know about your experience. Your feedback — negative or positive — helps [Location_Name] improve. We are looking into this issue and hope to make it up to you. Feel free to call me at [Company_Phone]\\n\\n[Contact_Name], [Contact_Title]\",\n  \"[Reviewer_Name],\\n\\nIt sounds like your experience at [Location_Name] did not meet your expectations or the standard of service we provide to our customers. We hope we can make it up to you — please reach out to me at [Company_Email] at your earliest convenience!\\n\\n[Contact_Name], [Contact_Title]\",\n  \"Dear [Reviewer_Name],\\n\\nWe take your experience with us very seriously and sincerely apologize for any disappointment. We will be looking into this further. Please contact me at [Company_Email]. I hope to work with you to resolve any issues as soon as possible.\\n\\n[Contact_Name], [Contact_Title]\",\n  \"[Reviewer_Name],\\n\\nWe apologize for your experience with us at [Location_Name]. We hope to connect with you soon to provide a better experience than the [rating] rated service you received. Please reach out to me directly at [Company_Email] so I can make it right!\\n\\n[Contact_Name], [Contact_Title]\"\n]",
+      "Value": "neg_replies",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=/html/body/div[1]/div/div[3]/div[2]/div/div[5]/div/div/div/div/div/div/div/div[2]@class",
+      "Value": "switch_state",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${switch_state} == \"el-switch auto-replies-modal--switch\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#app > div.main-content > div.el-card.is-always-shadow.feedback.main-content-view > div > div:nth-child(5) > div > div > header > button > i > svg > path",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div/footer/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div/footer/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div/div",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${test} == \"8 Selected\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#app > div.main-content > div.el-card.is-always-shadow.feedback.main-content-view > div > div:nth-child(5) > div > div > header > button > i > svg",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div/i[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${test} != \"10 Selected\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[3]/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-0\"]/div[2]/div/div[6]/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=tab-1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[2]/div/div/textarea",
+      "Value": "${neg_replies[0]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[3]/div/div/textarea",
+      "Value": "${neg_replies[1]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[4]/div/div/textarea",
+      "Value": "${neg_replies[2]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[5]/div/div/textarea",
+      "Value": "${neg_replies[3]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[6]/div/div/textarea",
+      "Value": "${neg_replies[4]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[7]/div/div/textarea",
+      "Value": "${neg_replies[5]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[8]/div/div/textarea",
+      "Value": "${neg_replies[6]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[9]/div/div/textarea",
+      "Value": "${neg_replies[7]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[10]/div/div/textarea",
+      "Value": "${neg_replies[8]}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div[11]/div/div/textarea",
+      "Value": "${neg_replies[9]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div/footer/div/div[2]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}
