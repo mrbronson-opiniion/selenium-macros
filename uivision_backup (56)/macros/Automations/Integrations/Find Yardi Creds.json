@@ -1,0 +1,126 @@
+{
+  "Name": "Find Yardi Creds",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return [[\"Sample Location\",\"Yardi URL\",\"Username\",\"Password\",\"Server/Database\"]];",
+      "Value": "result",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 11;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[${i}]/div[2]",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} ==\"Edit Integration\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[${i}]/div[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//div/label/div/div/div/div/input",
+      "Value": "yardi_url",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=/html/body/div[1]/div/div[3]/div[2]/div[2]/div/div/div/div[2]/div/form/label[1]/div/div/div/div/div/div/input",
+      "Value": "type",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "twoDimensionalArray = ${result};\nsearchString = ${yardi_url};\nfor (let i = 0; i < twoDimensionalArray.length; i++) {\n  // Check if the second element of the current sub-array is the same as the search string\n  if (twoDimensionalArray[i][1] === searchString) {\n    // Return true if a match is found\n    return true;\n  }\n}\n// Return false if no match is found after checking all sub-arrays\nreturn false;",
+      "Value": "already_have",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "!${already_have} && ${type} == \"Yardi\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//div[2]/label/div/div/div/div/input",
+      "Value": "username",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//div[3]/label/div/div/div/div/input",
+      "Value": "password",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//div[4]/label/div/div/div/div/input",
+      "Value": "server",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//form/div/div/div/div/div/span[2]",
+      "Value": "sample_location",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "x = ${result};\nx.push([${sample_location}, ${yardi_url}, ${username}, ${password}, ${server}]);\nreturn x;",
+      "Value": "result",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[3]/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[${i}]/div[2]",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "csvSaveArray",
+      "Target": "result",
+      "Value": "yardicreds.csv",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "Name": "Add ReadOnly Users",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[2]/div/div[3]/table/tbody/tr/td[2]/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div[2]/div/div/span/span/button",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${location[1]}.split(\" \")[0];",
+      "Value": "first",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${location[1]}.split(\" \")[1];",
+      "Value": "last",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//form/div/div/div/div/div/input",
+      "Value": "${first}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//form/div/div[2]/div/div/div/input",
+      "Value": "${last}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//form/div[2]/div/div/div/div/input",
+      "Value": "${location[2]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//form/div[3]/div/div/div/div/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 3;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.2",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li[3]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//form/div[3]/div[2]/div/div/div/div[2]/span/span/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li[3]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//form/div[4]/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "30",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotVisible",
+      "Target": "xpath=//form/div[4]/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[4]/div/div/button/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://app.opiniion.com/userList",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div[3]/table/tbody/tr[${r}]/td/div/span",
+      "Value": "name",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${name} != ${location[1]}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r} + 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div[3]/table/tbody/tr[${r}]/td/div/span",
+      "Value": "name",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div[3]/table/tbody/tr[${r}]/td/div/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"infinite-list location-table-in-user-details\"]/div[3]/table/tbody/tr/td/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/div[2]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/form/div[6]/div/div/div/div/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/div[2]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div[3]/table/tbody/tr/td/div/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://app.opiniion.com/locationList",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[2]/div/div[3]/table/tbody/tr/td[2]/div",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

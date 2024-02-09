@@ -1,0 +1,144 @@
+{
+  "Name": "DemoXDesktopAutomation",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "fast",
+      "Value": "!replayspeed",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Running DESKTOP image search now",
+      "Value": "#shownotification",
+      "Description": ""
+    },
+    {
+      "Command": "XDesktopAutomation",
+      "Target": "true",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Limit the search area for better performance",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Sub/Sub_XDesktopAutomation_Area",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Log button can be greyed out - try both options",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorignore",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Log button can have white or grey background",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "XClick",
+      "Target": "desktop_logstab_white_dpi_96.png@0.5",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorignore",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${!statusOK} == false",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "XClick",
+      "Target": "desktop_logstab_grey_dpi_96.png@0.5",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!statusOK",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Press Clear button",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "XClick",
+      "Target": "desktop_clearbutton_dpi_96.png@0.5",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Log cleared by macro (clear button pressed)",
+      "Value": "blue",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Now search and open other tabs",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "XClick",
+      "Target": "desktop_vartab_dpi_96.png@0.5",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "XClick",
+      "Target": "desktop_scrtab_dpi_96.png@0.4",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "XClick",
+      "Target": "desktop_vitab_dpi_96.png@0.4",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Check that the correct tab is selected",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "visualAssert",
+      "Target": "desktop_checktab_dpi_96.png@0.55",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "Name": "Main-HSL",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorIgnore",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 26;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${i}]/span",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${location} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${i}]/span",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[1]/div/div/div[2]/div[1]/div/div[${i}]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Maintenance Request Verbiage",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

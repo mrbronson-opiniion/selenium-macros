@@ -1,0 +1,306 @@
+{
+  "Name": "Get Yelp Rotators & Scrapers",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "open // ${scraper}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=/html/body/div[4]/div[2]/form/div[1]/div[1]/div[3]/div/div[2]/textarea",
+      "Value": "og_search",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=/html/body/div[4]/div[2]/form/div[1]/div[1]/div[3]/div/div[2]/textarea",
+      "Value": "${og_search} reviews",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#tsf > div:nth-child(1) > div.A8SBwf > div.RNNXgb > button > div > span > svg",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "linkText=Write a review",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!URL}",
+      "Value": "reviews_search",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false;",
+      "Value": "yelp_valid",
+      "Description": ""
+    },
+    {
+      "Command": "sourceExtract",
+      "Target": "regex=https://www.yelp.com/biz/[a-z,-]+",
+      "Value": "result",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${result} != \"#nomatchfound\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "result",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"location-and-hours\"]/section/div[2]/div/div/div/div/div/address/p/a/span",
+      "Value": "yelp_street",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"location-and-hours\"]/section/div[2]/div/div/div/div/div/address/p[2]/span",
+      "Value": "yelp_zip",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${yelp_street}.includes(${street_num});",
+      "Value": "street_check",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${yelp_zip}.includes(${zip});",
+      "Value": "zip_check",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${street_check} && ${zip_check}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return true;",
+      "Value": "yelp_valid",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${yelp_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Save URL to scraper",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${!URL};",
+      "Value": "yelpscraper",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Gather rating data",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=/html/body/yelp-react-root/div[1]/div[3]/div[1]/div[1]/div/div/div[2]/div[1]/span/div@aria-label",
+      "Value": "yelprating",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${yelprating}.split(' ');",
+      "Value": "yelprating",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${yelprating}[0];",
+      "Value": "yelprating",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/yelp-react-root/div[1]/div[3]/div[1]/div[1]/div/div/div[2]/div[2]/span/a",
+      "Value": "yelpreviews",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "x = ${yelpreviews}.split(' ');\nreturn x[0];",
+      "Value": "yelpreviews",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${yelpreviews} == '#LNF'",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "yelprating",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "yelpreviews",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Click write a review to grab rotator",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "clickAndWait",
+      "Target": "xpath=//*[@id=\"main-content\"]/div/div/a/div/div[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${!URL};",
+      "Value": "yelprotator",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Go back to Zoho",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"subFrmaddRowBtn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Name\"]/div/lyte-drop-button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=Lyte_Drop_Item_66",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Reviews\"]/div/input",
+      "Value": "${yelpreviews}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Rating\"]/div/input",
+      "Value": "${yelprating}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Rotator_URL\"]/div/input",
+      "Value": "${yelprotator}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Scraper_URL\"]/div/input",
+      "Value": "${yelpscraper}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Status\"]/div/lyte-drop-button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=Lyte_Drop_Item_96",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r}+1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

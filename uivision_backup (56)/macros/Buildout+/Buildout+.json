@@ -1,0 +1,636 @@
+{
+  "Name": "Buildout+",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "comment",
+      "Target": "Tabs: Zoho | Google Search",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//RENDER BUILDOUT OVERLAY\ntext = \"Starting Macro...\"\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#4FCBC5\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"160px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\n\npar = document.createElement(\"p\");\npar.style.padding = \"5px\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"24px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "1.5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[17]/div[11]/div/div/table/tbody/tr/td[2]/div[1]/div[2]/div/form/div[2]/div/div[3]/div[7]/div/div[3]/div/div/div[1]/div[2]/div[1]/div[2]/div[2]/div/span[2]/a",
+      "Value": "account",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Store all needed info for App Fields",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${!timeout_wait};",
+      "Value": "temp",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[17]/div[11]/div/div/table/tbody/tr/td[2]/div[1]/div[2]/div/form/div[2]/div/div[3]/div[7]/div/div[3]/div/div/div[1]/div[2]/div[1]/div[3]/div[3]/div/span[2]/a",
+      "Value": "manager",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${temp}",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=subvalue_COBJ1CF4",
+      "Value": "state",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "id=subvalue_COBJ1CF3",
+      "Value": "zip",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"btn_edit\"]/button",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_NAME_LInput",
+      "Value": "property",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF2_LInput",
+      "Value": "city",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF1_LInput",
+      "Value": "street",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${street}.split(\" \")[0];",
+      "Value": "street_num",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "crm_address = ${street} + \", \" + ${city} + \", \" + ${state} + \" \" + ${zip};\nreturn crm_address;",
+      "Value": "crm_address",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF9_LInput",
+      "Value": "phone",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Scan for duplicates",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://crm.zoho.com/crm/org638548319/search?searchword=searching",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=searchStr",
+      "Value": "${street} ${city} ${zip}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "name=saverel",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "function countTableRows() {\n    // Get all the table elements\n    const tables = document.querySelectorAll('table');\n\n    for (let i = 0; i < tables.length - 1; i++) {\n        // Check if the current table has a td with 'Locations' as inner text\n        const hasLocationTd = Array.from(tables[i].querySelectorAll('td')).some(td => td.innerText.trim() === 'Locations');\n\n        // If the current table has 'Locations', check the next table for the number of tr elements\n        if (hasLocationTd) {\n            const nextTable = tables[i + 1];\n            return nextTable.querySelectorAll('tr').length;\n        }\n    }\n\n    // Return 0 if no matching table is found\n    return 0;\n}\n\n// Call the function and log the result\nreturn countTableRows();",
+      "Value": "duplicates",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${duplicates} > 3",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//CHANGE MESSAGE\ntext = \"ERROR: Possible Duplicate Found. Continue?\"\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#FF0000\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"280px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\n\npar = document.createElement(\"p\");\npar.style.padding = \"5px\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"24px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\n// Create a container for the buttons\nvar buttonContainer = document.createElement(\"div\");\nbuttonContainer.style.display = \"flex\";\nbuttonContainer.style.justifyContent = \"center\";\nbuttonContainer.style.alignItems = \"center\";\nbuttonContainer.style.marginTop = \"20px\"; // Adjust as needed\n\nvar noButton = document.createElement(\"button\")\nnoButton.innerHTML = \"No\";\nnoButton.id = \"noButton\";\nvar yesButton = document.createElement(\"button\");\nyesButton.innerHTML = \"Yes\";\nyesButton.id = \"yesButton\";\n\n// Style buttons\nvar buttonStyle = \"background-color: white; color: black; border: none; padding: 10px 20px; margin: 10px; cursor: pointer;\";\nnoButton.style.cssText = buttonStyle;\nyesButton.style.cssText = buttonStyle;\n\n// Function to change style on click\nfunction changeButtonStyle(button) {\n    button.className = \"clicked\";\n    button.style.backgroundColor = \"grey\";\n}\n\n// Add event listeners\nnoButton.addEventListener(\"click\", function() {\n    changeButtonStyle(noButton);\n});\nyesButton.addEventListener(\"click\", function() {\n    changeButtonStyle(yesButton);\n});\n\n// Append buttons to the button container\nbuttonContainer.appendChild(noButton);\nbuttonContainer.appendChild(yesButton);\n\n// Append the button container to the overlay\ncust.appendChild(buttonContainer);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);\n\n",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"#LNF\";",
+      "Value": "no_status",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"#LNF\";",
+      "Value": "yes_status",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${no_status} == \"#LNF\" && ${yes_status} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "id=noButton@class",
+      "Value": "no_status",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "id=yesButton@class",
+      "Value": "yes_status",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${no_status} == \"clicked\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "throwError",
+      "Target": "Macro stopped.",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "FINISH HERE....",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "switch (${account}) {\n  case \"Cushman & Wakefield\": return \"C&W\";\n  case \"FPI Management\": return \"FPI\";\n  case \"RPM Living\": return \"RPM\";\n  case \"ZRS Property Management\": return \"ZRS\";\n  case \"Metric Property Management\": return \"Metric\";\n  default: return ${account};\n}",
+      "Value": "account",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Check for ALN ID",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "executeScript // //CHANGE MESSAGE\ntext = \"Grabbing ALN Data...\"\n\ncust = document.getElementById(\"buildoutOverlay\");\ncust.remove();\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#4FCBC5\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"160px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\n\npar = document.createElement(\"p\");\npar.style.padding = \"5px\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"24px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "storeValue // id=Crm_CustomModule1_COBJ1CF153_LInput",
+      "Value": "aln_id",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "if // ${aln_id} == \"\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "selectWindow // tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "run // Get ALN ID",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "selectWindow // tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "if // ${aln_id} != \"not found\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "type // id=Crm_CustomModule1_COBJ1CF153_LInput",
+      "Value": "${aln_id}",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "end // ",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "end // ",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Navigate to input area",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//CHANGE MESSAGE\ntext = \"Inputting App Fields...\"\n\ncust = document.getElementById(\"buildoutOverlay\");\ncust.remove();\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#4FCBC5\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"160px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\n\npar = document.createElement(\"p\");\npar.style.padding = \"5px\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"24px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Input all App Fields",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorignore",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF44_LInput",
+      "Value": "${property}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF36_LInput",
+      "Value": "${property}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF12_LInput",
+      "Value": "${property}",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorignore",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${manager} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF32_LInput",
+      "Value": "${manager}",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"Crm_CustomModule1_COBJ1CF41\"]/div/lyte-drop-button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/lyte-drop-box/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF35_LInput",
+      "Value": "#545454",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF59_LInput",
+      "Value": "4",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//CHANGE MESSAGE\ntext = \"Grabbing Google Rotator...\"\n\ncust = document.getElementById(\"buildoutOverlay\");\ncust.remove();\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#4FCBC5\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"160px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\n\npar = document.createElement(\"p\");\npar.style.padding = \"5px\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"24px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Get Google Rotators & Scrapers",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//CHANGE MESSAGE\ntext = \"Grabbing Apartments.com Rotator...\"\n\ncust = document.getElementById(\"buildoutOverlay\");\ncust.remove();\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#4FCBC5\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"160px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\n\npar = document.createElement(\"p\");\npar.style.padding = \"5px\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"24px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Get Apartments.com Rotators & Scrapers",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "run // Get Yelp Rotators & Scrapers",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "${website}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[15]/div/div/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${phone} == \"\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF9_LInput",
+      "Value": "${number}",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"Crm_CustomModule1_ATTACHMENTID_3\"]/button",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"lyteMenu_133785\"]/lyte-yield/lyte-menu-body/lyte-menu-item/lyte-menu-label",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//RENDER BUILDOUT OVERLAY\ntext = \"Please input logo and brand color.\"\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#4FCBC5\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"160px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\ncust.style.textAlign = \"center\";\n\npar = document.createElement(\"div\");\npar.style.padding = \"5px\";\npar.style.textAlign = \"left\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"18px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF33_LInput",
+      "Value": "button_color",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[16]/div[11]/div/crm-create-entity/form/crm-create-layout/div[2]/crm-create-sections[13]/div/div/div[2]/div[1]/crm-create-fields[11]/div/div[2]/div[2]/ul/li/div[1]/span[2]/a",
+      "Value": "logo_file",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${button_color} == \"\" || ${logo_file} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "1000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF33_LInput",
+      "Value": "button_color",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[17]/div[11]/div/crm-create-entity/form/crm-create-layout/div[2]/div/crm-create-sections[13]/div/div/div[2]/div[1]/crm-create-fields[11]/div/div[2]/div[2]/ul/li/div[1]/span[2]/a",
+      "Value": "logo_file",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "id=Crm_CustomModule1_COBJ1CF33_LInput",
+      "Value": "button_color",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=Crm_CustomModule1_COBJ1CF33_LInput",
+      "Value": "${button_color}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=crm_create_savebutn",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${account} == 'C&W'",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${manager}",
+      "Value": "blue",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "switch (${state}) {\ncase 'WA':\ncase 'OR': return 'Jennifer.Anderson1@cushwake.com,kayla.biehl@cushwake.com';\ncase 'NV': return 'emily.moholick@cushwake.com';\ncase 'CA':\ncase 'AZ': return 'leann.freeman@cushwake.com,Christina.Martinez1@cushwake.com,Desiree.Olivas@cushwake.com';\ncase 'AR':\ncase 'TX': return 'megan.clark@cushwake.com,maryfrances.Mascio@cushwake.com,amber.frisbie@cushwake.com';\ncase 'CO':\ncase 'NE':\ncase 'KS':\ncase 'MN':\ncase 'MO':\ncase 'WI':\ncase 'IL':\ncase 'IN':\ncase 'MI':\ncase 'OH':\ncase 'KY': return 'lindsey.bernhardt@cushwake.com';\ncase 'TN':\ncase 'AL':\ncase 'GA':\ncase 'MS':\ncase 'LA':\ncase 'FL': return 'heather.gottlieb@cushwake.com,mia.chigumira@cushwake.com';\ncase 'NY':\ncase 'MA':\ncase 'CT':\ncase 'PA':\ncase 'NJ':\ncase 'DE':\ncase 'MD':\ncase 'DC':\ncase 'VA':\ncase 'NC':\ncase 'SC': return 'heather.white@cushwake.com';\n}",
+      "Value": "recipients",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${recipients},moriahh@opiniion.com",
+      "Value": "blue",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${property}, Welcome to Opiniion!",
+      "Value": "purple",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//CHANGE MESSAGE\ntext = \"Finished!\"\n\ncust = document.getElementById(\"buildoutOverlay\");\ncust.remove();\n\ncust = document.createElement(\"div\");\ncust.id = \"buildoutOverlay\";\ncust.style.background = \"#4FCBC5\";\ncust.style.color = \"white\";\ncust.style.fontSize = \"14px\"\ncust.style.position = \"fixed\";\ncust.style.height = \"160px\";\ncust.style.width = \"320px\";\ncust.style.zIndex = \"1000\";\ncust.style.top = \"15%\";\ncust.style.right = \"5%\";\ncust.style.borderRadius = \"10px\";\ncust.style.boxShadow = \"2px 2px 5px 0px rgba(0,0,0,0.2)\";\n\npar = document.createElement(\"p\");\npar.style.padding = \"5px\";\ntitle = document.createTextNode(\"Buildout+\");\npar.appendChild(title);\ncust.appendChild(par);\n\ncloseButton = document.createElement(\"div\");\ncloseButton.id = \"closeButton\";\ncloseButton.style.position = \"absolute\";\ncloseButton.style.top = \"10px\";\ncloseButton.style.right = \"10px\";\ncloseButton.style.cursor = \"pointer\";\ncloseButton.style.fontSize = \"18px\";\ncloseButton.style.fontWeight = \"bold\";\ncloseButton.appendChild(document.createTextNode(\"x\"));\n\ncloseButton.addEventListener(\"click\", function() {\n    existingOverlay = document.getElementById(\"buildoutOverlay\");\n    while (existingOverlay) {\n      existingOverlay.remove();\n      existingOverlay = document.getElementById(\"buildoutOverlay\");\n    }\n});\n\ncust.appendChild(closeButton);\n\nmessage = document.createElement(\"div\");\nmessage.id = \"buildoutMessage\";\nmessage.style.padding = \"30px\";\nmessage.style.color = \"white\";\nmessage.style.fontSize = \"24px\";\nmessage.style.fontWeight = \"bold\";\nmessage.style.textAlign = \"center\";\nmessage.appendChild(document.createTextNode(text));\ncust.appendChild(message);\n\npage = document.getElementsByTagName(\"body\")[0];\npage.appendChild(cust);",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "2000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//DELETE OVERLAY\ncust = document.getElementById(\"buildoutOverlay\");\ncust.remove();",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "//DELETE OVERLAY\ncust = document.getElementById(\"buildoutOverlay\");\ncust.remove();",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

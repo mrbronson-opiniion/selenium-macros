@@ -1,0 +1,228 @@
+{
+  "Name": "Buildout QA",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//lyte-exptable-tr[${r}]/lyte-exptable-td[4]/lyte-yield/a/lyte-text",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${location} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=//lyte-exptable-tr[${r}]/lyte-exptable-td[4]/lyte-yield/a@href",
+      "Value": "crm_link",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=1",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "${crm_link}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"btn_edit\"]/button/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false;",
+      "Value": "need_to_post",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//div/lyte-input/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_SubForm_Review_Platforms\"]/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "pr",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${pr}_Platform_Starting_Reviews\"]/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "css=#CustomModule1_Review_Platforms_R${pr}_Platform_Status > div.lyteDummyEventContainer > lyte-drop-button > span",
+      "Value": "status",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${status} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${status} != \"Active - Rotator & Scraper\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#CustomModule1_Review_Platforms_R${pr}_Platform_Status > div.lyteDummyEventContainer > lyte-drop-button > span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return true;",
+      "Value": "need_to_post",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${pr} + 1;",
+      "Value": "pr",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${pr}_Platform_Starting_Reviews\"]/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "css=#CustomModule1_Review_Platforms_R${pr}_Platform_Status > div.lyteDummyEventContainer > lyte-drop-button > span",
+      "Value": "status",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"crm_create_savebutn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"ownerName_id\"]/lyte-text",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "1000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${need_to_post}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"detailPageButton\"]/div/lyte-drop-button/div[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div/lyte-drop-item[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "id=cbSuccessPopupRespContent",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "selectWindow",
+      "Target": "tab=0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r} + 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//lyte-exptable-tr[${r}]/lyte-exptable-td[4]/lyte-yield/a/lyte-text",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

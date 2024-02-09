@@ -1,0 +1,486 @@
+{
+  "Name": "Build",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"btn_edit\"]/button/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div[2]/div/crm-create-fields/div/div[2]/crux-text-component/div/lyte-input/div/input",
+      "Value": "${location_name}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div[2]/div/crm-create-fields[2]/div/div[2]/crux-text-component/div/lyte-input/div/input",
+      "Value": "${location_name}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div[2]/div/crm-create-fields[3]/div/div[2]/crux-text-component/div/lyte-input/div/input",
+      "Value": "${location_name}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crm-create-fields[4]/div/div[2]/crux-email-component/div/lyte-input/div/input",
+      "Value": "${location_contact}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div[2]/div/crm-create-fields[5]/div/div[2]/lyte-dropdown/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//body/lyte-drop-box/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crm-create-fields[7]/div/div[2]/crux-text-component/div/lyte-input/div/input",
+      "Value": "#545454",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crm-create-sections[13]/div/div/div[2]/div/crm-create-fields[9]/div/div[2]/crux-number-component/div/lyte-input/div/input",
+      "Value": "4",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-subformsection/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R1_Platform_Starting_Reviews\"]/div/input",
+      "Value": "${google_ratings}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R1_Platform_Starting_Rating\"]/div/input",
+      "Value": "${google_score}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R1_Platform_Rotator_URL\"]/div/input",
+      "Value": "${google_rotator}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R1_Platform_Scraper_URL\"]/div/input",
+      "Value": "${google_scraper}",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 2;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 2;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aptscom_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"subFrmaddRowBtn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Name\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[6]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Reviews\"]/div/input",
+      "Value": "${aptscom_ratings}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Rating\"]/div/input",
+      "Value": "${aptscom_score}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Rotator_URL\"]/div/input",
+      "Value": "${aptscom_rotator}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Scraper_URL\"]/div/input",
+      "Value": "${aptscom_scraper}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Status\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r} + 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${yelp_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"subFrmaddRowBtn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Name\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Reviews\"]/div/input",
+      "Value": "${yelp_ratings}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Rating\"]/div/input",
+      "Value": "${yelp_score}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Rotator_URL\"]/div/input",
+      "Value": "${yelp_rotator}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Scraper_URL\"]/div/input",
+      "Value": "${yelp_scraper}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Status\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r} + 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aptrat_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"subFrmaddRowBtn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Name\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[5]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Reviews\"]/div/input",
+      "Value": "${aptrat_ratings}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Rating\"]/div/input",
+      "Value": "${aptrat_score}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Rotator_URL\"]/div/input",
+      "Value": "${aptrat_rotator}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Scraper_URL\"]/div/input",
+      "Value": "${aptrat_scraper}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Status\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r} + 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${fb_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"subFrmaddRowBtn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Name\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[3]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${ldb} + 1;",
+      "Value": "ldb",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Reviews\"]/div/input",
+      "Value": "${fb_ratings}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Starting_Rating\"]/div/input",
+      "Value": "${fb_score}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Rotator_URL\"]/div/input",
+      "Value": "${fb_rotator}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Scraper_URL\"]/div/input",
+      "Value": "${fb_rotator}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"CustomModule1_Review_Platforms_R${r}_Platform_Status\"]/div/lyte-drop-button/lyte-icon",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//lyte-drop-box[${ldb}]/lyte-drop-body/lyte-drop-item[4]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[15]/div/div/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crm-create-sections[15]/div/div/div[2]/div[2]/crm-create-fields/div/div[2]/crux-text-area-component/div/lyte-input/div/textarea",
+      "Value": "Filled in all fields, added rotators & scrapers. Please scrape for the logo and button color.\\n\\n<3 BuildoutBot",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${needs_phone}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//crm-create-sections[3]/div/div/div/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//crux-phone-component/div/div/lyte-input/div/input",
+      "Value": "${phone}",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"crm_create_savebutn\"]/lyte-yield",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

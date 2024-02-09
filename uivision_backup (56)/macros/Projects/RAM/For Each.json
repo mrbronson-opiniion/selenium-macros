@@ -1,0 +1,66 @@
+{
+  "Name": "For Each",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "ramcamp",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "row",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${row[1]}",
+      "Value": "app_id",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div/div/div/div/input",
+      "Value": "${app_id}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Distribute RR Evenly",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Create Office Visit",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

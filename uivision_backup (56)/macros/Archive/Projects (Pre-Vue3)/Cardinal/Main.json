@@ -1,0 +1,90 @@
+{
+  "Name": "Main",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "cardinal_resident_survey.csv",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "loops",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"infinite-scroll-container\"]/div/input",
+      "Value": "${location[1]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Resident Move In Survey",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${loops} + 1;",
+      "Value": "loops",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${loops} % 2 == 0;",
+      "Value": "needs_refresh",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${needs_refresh}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementVisible",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

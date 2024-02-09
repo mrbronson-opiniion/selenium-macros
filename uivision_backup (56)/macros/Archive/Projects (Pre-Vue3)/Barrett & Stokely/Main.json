@@ -1,0 +1,102 @@
+{
+  "Name": "Main",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "bs_appnames.csv",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "loops",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementVisible",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"infinite-scroll-container\"]/div/input",
+      "Value": "${location[0]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Link Apartments",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${loops} % 5 == 0;",
+      "Value": "refresh_time",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${refresh_time}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${loops} + 1;",
+      "Value": "loops",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

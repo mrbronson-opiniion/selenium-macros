@@ -1,0 +1,222 @@
+{
+  "Name": "RealPage Integrations",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "prompt",
+      "Target": "name of the (location id, app name) file@.csv",
+      "Value": "filename",
+      "Description": ""
+    },
+    {
+      "Command": "prompt",
+      "Target": "RealPage client ID",
+      "Value": "client_id",
+      "Description": ""
+    },
+    {
+      "Command": "csvReadArray",
+      "Target": "${filename}",
+      "Value": "file",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${file}[0].length;",
+      "Value": "num_col",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "text = ${file}[1][0];\npattern = /[0-9]{7}/\nreturn pattern.test(text);",
+      "Value": "test_locid",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "pattern = /[0-9]{7}/\nreturn pattern.test(${client_id});",
+      "Value": "test_cliid",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${num_col} != 2 || !${test_locid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "throwError",
+      "Target": "File invalid!",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "elseif",
+      "Target": "!${test_cliid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "throwError",
+      "Target": "Client ID invalid!",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "file",
+      "Value": "location",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"location-button\"]/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"infinite-scroll-container\"]/div/input",
+      "Value": "${location[1]}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"dropdown-data\"]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[3]/div/div/button/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/label/div/div/div/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.2",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 3;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[${i}]/div/div/ul/li[7]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "x = ${location[1]}.split(\" - \");\nreturn x[1] + \" - \" + x[0];",
+      "Value": "int_name",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/label[3]/div/div/div/input",
+      "Value": "${int_name}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/div/div/label/div/div/div/input",
+      "Value": "${client_id}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[2]/div/form/div/div[2]/label/div/div/div/input",
+      "Value": "${location[0]}",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[3]/div/div/button/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div[2]/div[3]/div/div/button/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

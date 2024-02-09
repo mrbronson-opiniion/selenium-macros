@@ -1,0 +1,216 @@
+{
+  "Name": "Get Yelp",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "open",
+      "Target": "https://www.google.com/search?q=search&oq=search&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIGCAIQRRg8MgYIAxBFGDwyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDY4MzVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#tsf > div:nth-child(1) > div.A8SBwf > div.RNNXgb > div > div.dRYYxd > div.BKRPef > div > span > svg > path",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//textarea",
+      "Value": "${location_name} ${location_street} ${location_city} ${location_state} ${location_zip} yelp",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "2",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#tsf > div:nth-child(1) > div.A8SBwf > div.RNNXgb > button > div > span > svg > path",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "sourceExtract",
+      "Target": "regex=https://www.yelp.com/biz/[a-z,-]*\"",
+      "Value": "result",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "if (${result} == \"#nomatchfound\") {\n  return false;\n}\nreturn true;",
+      "Value": "yelp_valid",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${yelp_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${result}.slice(0, -1);",
+      "Value": "result",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "15",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "${result}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/yelp-react-root/div/div[4]/div/div/div/div/div/h1",
+      "Value": "yelp_name",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"location-and-hours\"]/section/div[2]/div/div/div/div/div/address/p/a/span",
+      "Value": "yelp_street",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"location-and-hours\"]/section/div[2]/div/div/div/div/div/address/p[2]/span",
+      "Value": "yelp_citystatezip",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "function levenshteinDistance(a, b) {\n  const matrix = [];\n\n  // Increment along the first column of each row.\n  for (let i = 0; i <= b.length; i++) {\n    matrix[i] = [i];\n  }\n\n  // Increment each column in the first row.\n  for (let j = 0; j <= a.length; j++) {\n    matrix[0][j] = j;\n  }\n\n  // Fill in the rest of the matrix.\n  for (let i = 1; i <= b.length; i++) {\n    for (let j = 1; j <= a.length; j++) {\n      if (b.charAt(i - 1) == a.charAt(j - 1)) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, // substitution\n                                Math.min(matrix[i][j - 1] + 1, // insertion\n                                         matrix[i - 1][j] + 1)); // deletion\n      }\n    }\n  }\n\n  return matrix[b.length][a.length];\n}\n\nfunction similarity(str1, str2) {\n  const distance = levenshteinDistance(str1, str2);\n  const longestLength = Math.max(str1.length, str2.length);\n\n  if (longestLength === 0) {\n    return 100; // both strings are empty\n  }\n\n  return (1 - distance / longestLength) * 100;\n}\n\nif (similarity(${yelp_street}, ${location_street}) > 50 && ${yelp_citystatezip} == (${location_city} + \", \" + ${location_state} + \" \" + ${location_zip}) && similarity(${yelp_name}, ${location_name}) > 70) {\n  return true;\n}\nreturn false;",
+      "Value": "yelp_valid",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${yelp_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${num_platforms} + 1;",
+      "Value": "num_platforms",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "2",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/yelp-react-root/div/div[4]/div/div/div/div/div[2]/div[2]/span",
+      "Value": "yelp_score",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/yelp-react-root/div/div[4]/div/div/div/div/div[2]/div[2]/span[2]/a",
+      "Value": "reviews",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "if (${yelp_score} == \"#LNF\") {\n\treturn 0;\n}\nreturn ${yelp_score}",
+      "Value": "yelp_score",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "if (${reviews} == \"#LNF\") {\n\treturn 0;\n}\nreturn ${reviews}",
+      "Value": "yelp_ratings",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "if (${yelp_ratings} != 0) {\n\treturn ${reviews}.split(\" \")[0].slice(1);\n}\nreturn ${yelp_ratings};",
+      "Value": "yelp_ratings",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!URL}",
+      "Value": "yelp_scraper",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"main-content\"]/div/div/a/div/div[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "1000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!URL}",
+      "Value": "yelp_rotator",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

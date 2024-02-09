@@ -1,0 +1,210 @@
+{
+  "Name": "Get AptRat",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "open",
+      "Target": "https://www.google.com/search?q=search&oq=search&gs_lcrp=EgZjaHJvbWUyDAgAEEUYORixAxiABDINCAEQABiDARixAxiABDIGCAIQRRg8MgYIAxBFGDwyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDY4MzVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#tsf > div:nth-child(1) > div.A8SBwf > div.RNNXgb > div > div.dRYYxd > div.BKRPef > div > span > svg > path",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//textarea",
+      "Value": "${location_name} ${location_street} ${location_city} ${location_state} ${location_zip} apartment ratings",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "css=#tsf > div:nth-child(1) > div.A8SBwf > div.RNNXgb > button > div > span > svg > path",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "sourceExtract",
+      "Target": "regex=https://www.apartmentratings.com/[a-z]{2}/[a-z]+/[a-z,-]+_[0-9]+/",
+      "Value": "result",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "if (${result} == \"#nomatchfound\") {\n  return false;\n}\nreturn true;",
+      "Value": "aptrat_valid",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aptrat_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "15",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "${result}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "10",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"overview\"]/div/div[3]/h1",
+      "Value": "aptrat_name",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"overview\"]/div/div[4]",
+      "Value": "aptrat_address",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${location_street} + \", \" + ${location_city} + \", \" + ${location_state} + \" \" + ${location_zip};",
+      "Value": "crm_address",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "function levenshteinDistance(a, b) {\n  const matrix = [];\n\n  // Increment along the first column of each row.\n  for (let i = 0; i <= b.length; i++) {\n    matrix[i] = [i];\n  }\n\n  // Increment each column in the first row.\n  for (let j = 0; j <= a.length; j++) {\n    matrix[0][j] = j;\n  }\n\n  // Fill in the rest of the matrix.\n  for (let i = 1; i <= b.length; i++) {\n    for (let j = 1; j <= a.length; j++) {\n      if (b.charAt(i - 1) == a.charAt(j - 1)) {\n        matrix[i][j] = matrix[i - 1][j - 1];\n      } else {\n        matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, // substitution\n                                Math.min(matrix[i][j - 1] + 1, // insertion\n                                         matrix[i - 1][j] + 1)); // deletion\n      }\n    }\n  }\n\n  return matrix[b.length][a.length];\n}\n\nfunction similarity(str1, str2) {\n  const distance = levenshteinDistance(str1, str2);\n  const longestLength = Math.max(str1.length, str2.length);\n\n  if (longestLength === 0) {\n    return 100; // both strings are empty\n  }\n\n  return (1 - distance / longestLength) * 100;\n}\n\nconsole.log(similarity(${aptrat_address}, ${crm_address}))\n\nif (similarity(${aptrat_address}, ${crm_address}) > 70 && similarity(${aptrat_name}, ${location_name}) > 70) {\n  return true;\n}\nreturn false;",
+      "Value": "aptrat_valid",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aptrat_valid}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${num_platforms} + 1;",
+      "Value": "num_platforms",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!URL}",
+      "Value": "aptrat_scraper",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"overview\"]/div/div[5]/div[2]",
+      "Value": "reviews",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${reviews}.split(\" \")[0].slice(1);",
+      "Value": "aptrat_ratings",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${aptrat_ratings} == 0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0",
+      "Value": "aptrat_score",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "sourceExtract",
+      "Target": "regex=\"ratingValue\":[0-9].?[0-9]?,",
+      "Value": "score",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${score}.split(\":\")[1].slice(0,-1)",
+      "Value": "aptrat_score",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"overview-writeReview\"]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!URL}",
+      "Value": "aptrat_rotator",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "Name": "Turn On Review Auto Replies",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/div/form/div/div/div/div/div/input",
+      "Value": "contact_name",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/div/form/div[2]/div/div/div/div/input",
+      "Value": "company_email",
+      "Description": ""
+    },
+    {
+      "Command": "storeValue",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[2]/div/div/form/div[2]/div[2]/div/div/div/input",
+      "Value": "company_phone",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[5]/div/div[3]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[2]/ul/div[4]/li/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/div/div[2]/div[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[3]/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div/div/div/div/div/input",
+      "Value": "${contact_name}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div/div[2]/div/div/div/input",
+      "Value": "Manager",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div[2]/div/div/div/div/input",
+      "Value": "${company_email}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[2]/div/div/form/div[2]/div[2]/div/div/div/input",
+      "Value": "${company_phone}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[3]/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[6]/div/div[2]/div/div/div/div/div/div/div/div[2]",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-1\"]/div/div/label/span/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[6]/div/div[3]/div/div[2]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

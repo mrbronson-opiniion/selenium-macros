@@ -1,0 +1,126 @@
+{
+  "Name": "Distribute RR Evenly",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div/div[3]/div/div/div/table/tbody/tr[${r}]/td[4]/div/span",
+      "Value": "campaign_type",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${campaign_type} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${campaign_type} == \"Review Request\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div/div[3]/div/div/div/table/tbody/tr[${r}]/td[4]/div/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div[4]/div/div/footer/button[2]/span",
+      "Value": "Edit Campaign",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div/button[2]/span",
+      "Value": "Next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div/button[2]/span",
+      "Value": "Next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div/div[2]/div/button/span",
+      "Value": "Distribute Evenly",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div[2]/button[2]/span",
+      "Value": "Next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/button/span",
+      "Value": "Start Campaign",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/button/span",
+      "Value": "Start Campaign",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${r} + 1;",
+      "Value": "r",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div/div[3]/div/div/div/table/tbody/tr[${r}]/td[4]/div/span",
+      "Value": "campaign_type",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "Name": "Exp Lease",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${i}]/td[2]/div",
+      "Value": "campaign",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${campaign} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${i}]/td[2]/div",
+      "Value": "campaign",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${campaign} != \"Expiring Lease\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i}+1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${i}]/td[2]/div",
+      "Value": "campaign",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-datatable\"]/div[3]/table/tbody/tr[${i}]/td[2]/div",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-content-wrapper\"]/div[2]/div/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-body-container\"]/div/div/div/form/div/div[2]/div/div[5]/div[4]/div/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "click // xpath=/html/body/div[3]/div/div/ul/li[3]",
+      "Value": "1 Month",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[3]/div/div/ul/li[5]",
+      "Value": "6 Month",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-footer-container\"]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-footer-container\"]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"campaign-content-wrapper\"]/div[2]/div/div/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "1000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "refresh",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "Name": "HSL Macro",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "HSL.csv",
+      "Value": "properties",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name],\\n\\nThanks for the [rating] rating! We appreciate you taking the time to share your feedback. Please let us know if we can do something to make your experience even better!\\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "P1",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Dear [Reviewer_Name],\\n\\nThank you for your positive feedback! Our goal is to continue to provide a [rating] rated experience. We appreciate you and your business.\\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "P2",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name], \\n\\n We’re happy that you’re happy! Thank you for taking the time to leave us a positive review. We’re so thankful for [Location_Name] customers like you. \\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "P3",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \t\"Hey [Reviewer_Name]!\\n\\n Thanks for sharing your [Location_Name] experience with us — we are glad it was a positive one! \\n\\n[Contact_Name], \";",
+      "Value": "P4",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name], \\n\\n Thanks for visiting [Location_Name]! It means so much when customers share their positive experiences with us. Thank you for your [rating] rated review. \\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "P5",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \t\"We are so grateful for your positive review, [Reviewer_Name]!\\n\\n We hope to always provide a great experience at [Location_Name]. Don’t hesitate to reach out if there’s a way we can improve serving you. Thanks again! \\n\\n[Contact_Name] / [Company_Email]\";",
+      "Value": "P6",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Hey [Reviewer_Name]!\\n\\n Thank you for your [rating] rated review. We appreciate you and your business. \\n\\n[Contact_Name]\";",
+      "Value": "P7",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Dear [Reviewer_Name], \\n\\n Thanks for being a part of the [Location_Name] family! We can’t wait to share your positive feedback with the rest of the team. We hope to continue to provide you with a quality experience. \\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "P8",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \t\"Hey [Reviewer_Name]!\\n\\n Thanks for sharing your [Location_Name] experience with us — we are glad it was a positive one! \\n\\n[Contact_Name], \";",
+      "Value": "P9",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name], \\n\\n We are so appreciative of your [rating] rated review and you taking the time to share it with us. Here at [Location_Name], our goal is to supply customers with the highest quality experiences. We hope you have a great day! \\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "P10",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name],\\n\\n We’d like to apologize for the negative experience you had with us. We’ve taken your feedback and will work hard to implement needed changes at [Location_Name]. I’d love to make things right! Please reach out to me at your earliest convenience. \\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "N1",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Dear [Reviewer_Name], \\n\\n We are so sorry we did not meet your expectations. We’d love to make this situation right and provide a solution that will result in a more positive experience. I hope to hear from you soon. \\n\\n[Contact_Name], [Company_Email]\";",
+      "Value": "N2",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Dear [Reviewer_Name], \\n\\n Thank you for bringing this to our attention. We apologize for the experience you had at [Location_Name] and want to work to provide a solution for you. Please feel free to contact me at [Company_Phone]; I’d love to learn more about the situation and how we can fix it. \\n\\n[Contact_Name]\";",
+      "Value": "N3",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name], \\n\\n I’m so sorry — it sounds like we really missed the mark on your experience at [Location_Name]. Can we make it up to you? Please reach out to me directly at [Company_Email].\\n[Contact_Name]\";",
+      "Value": "N4",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Dear [Reviewer_Name], \\n\\n We hear you loud and clear, thank you for taking the time to bring this to our attention. We apologize for the negative experience you had at [Location_Name] and want to fix it. Reach me directly at [Company_Phone].\\n\\n[Contact_Name]\";",
+      "Value": "N5",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name],\\n\\n Even though it was a negative experience, we appreciate your feedback. We hope to learn from our mistakes and make things right. Please let me know how I can make it up to you. Feel free to contact me directly at [Company_Email]\\n\\n[Contact_Name]\";",
+      "Value": "N6",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name],\\n\\n Thank you for letting us know about your experience. Your feedback — negative or positive — helps [Location_Name] improve. We are looking into this issue and hope to make it up to you. Feel free to call me at [Company_Phone] \\n\\n[Contact_Name]\";",
+      "Value": "N7",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name],\\n\\n It sounds like your experience at [Location_Name] did not meet your expectations or the standard of service we provide to our customers. We hope we can make it up to you — please reach out to me at [Company_Email] at your earliest convenience! \\n\\n[Contact_Name]\";",
+      "Value": "N8",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"Dear [Reviewer_Name],\\n\\n We take your negative experience with us very seriously and sincerely apologize for it. We will be looking into this issue further. Please contact me at [Company_Email]. I hope to work with you to resolve any issues as soon as possible. I hope to hear from you soon! \\n\\n[Contact_Name]\";",
+      "Value": "N9",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"[Reviewer_Name],\\n\\n We apologize for your negative experience with us at [Location_Name]. We hope to connect with you soon to provide a better experience than the [rating] rated service you received. Please reach out to me directly at [Company_Email] so I can make it right! \\n\\n[Contact_Name],\";",
+      "Value": "N10",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "properties",
+      "Value": "property",
+      "Description": ""
+    },
+    {
+      "Command": "run",
+      "Target": "HSL",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

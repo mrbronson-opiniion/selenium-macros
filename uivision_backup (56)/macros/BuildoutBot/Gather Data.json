@@ -1,0 +1,120 @@
+{
+  "Name": "Gather Data",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "storeText",
+      "Target": "id=subvalue_NAME",
+      "Value": "location_name",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div/span[2]/span/lyte-text",
+      "Value": "location_owner",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div/span[2]/a",
+      "Value": "account_name",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[4]/div/span[2]/span",
+      "Value": "location_type",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[3]/div/span[2]/a",
+      "Value": "location_contact",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[5]/div[3]/div/div/span[2]/span",
+      "Value": "location_phone",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[5]/div[2]/div/div/span[2]/span",
+      "Value": "location_street",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[5]/div[2]/div[2]/div/span[2]/span",
+      "Value": "location_city",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[5]/div[2]/div[4]/div/span[2]/span",
+      "Value": "location_state",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[5]/div[2]/div[5]/div/span[2]/span",
+      "Value": "location_zip",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[5]/div[3]/div/div/span[2]/span",
+      "Value": "phone",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "if (${phone} == \"\") {\n  return true;\n}\nreturn false;",
+      "Value": "needs_phone",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false",
+      "Value": "google_valid",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false",
+      "Value": "aptscom_valid",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false",
+      "Value": "yelp_valid",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false",
+      "Value": "fb_valid",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false",
+      "Value": "aptrat_valid",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return \"\";",
+      "Value": "note_string",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "num_platforms",
+      "Description": ""
+    }
+  ]
+}

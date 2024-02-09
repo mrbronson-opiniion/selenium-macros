@@ -1,0 +1,378 @@
+{
+  "Name": "Add User",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 10;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "CHECK IF USER EXISTS",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//input",
+      "Value": "${email}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div[2]/div/div/div/div/div/div[2]/div/div[2]/div/span[2]/span/i",
+      "Value": "Search Icon",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=/html/body/div[1]/div/div[2]@class",
+      "Value": "status",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${status} == \"loading\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeAttribute",
+      "Target": "xpath=/html/body/div[1]/div/div[2]@class",
+      "Value": "status",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div/div[3]/div/div/div/table/tbody/tr/td[5]/div/span",
+      "Value": "exists",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${exists} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "ADD NEW USER",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div[2]/div/div/div/div/div/div[2]/button/span",
+      "Value": "Add User",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//form/div/div/div/div/div/div/input",
+      "Value": "${property_name}",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div/div/div/div/input",
+      "Value": "Manager",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div/div/div/div/div/input",
+      "Value": "${email}",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[${i}]/div/div/div/ul/li[3]/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//div[${i}]/div/div/div/ul/li[3]/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[${i}]/div/div/div/ul/li[3]/span",
+      "Value": "Manager [Role]",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[${i}]/div/div/div/ul/li/span",
+      "Value": "New Review",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[${i}]/div/div/div/ul/li[2]/span",
+      "Value": "Potential Negative",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[${i}]/div/div/div/ul/li[3]/span",
+      "Value": "Customer Message",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div[2]/div/div/div/div/div[4]/div/div/footer/div/div/div[2]/button/span",
+      "Value": "Next Step",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//div[3]/div/div/div/div[2]/div/div/div/div/div/div[2]/div/div[2]/div/input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[3]/div/div/div/div[2]/div/div/div/div/div/div[2]/div/div[2]/div/input",
+      "Value": "${property_name}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div/div[2]/div/div[2]/div/span[2]/span/i",
+      "Value": "Search Icon",
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[2]/div/div/div[3]/div/div/div/table/tbody/tr/td[2]/div",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "if",
+      "Target": "${test} != \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[2]/div/div/div[3]/div/div/div/table/tbody/tr/td/div/label/span/span",
+      "Value": "Checkmark",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div[2]/div/div/div/div/div[3]/div/div/footer/div/div/div[2]/button/span",
+      "Value": "Add User",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div[2]/div/div/div/div/div[3]/div/div/footer/div/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "ADD PROPERTY TO EXISTING USER",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"user-list-table\"]/div/div[3]/div/div/div/table/tbody/tr/td[2]/div/label/span/span",
+      "Value": "Checkmark",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div[2]/div/div/div/div/button/span/span",
+      "Value": "Actions",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[11]/div/a[1]",
+      "Value": "Assign Locations",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div/div/div/div/div[2]/div/div[2]/div/input",
+      "Value": "${property_name}",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div/div[2]/div/div[2]/div/span[2]/span/i",
+      "Value": "Search Icon",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"card-wrapper\"]/div[2]/div/div/div[3]/div/div/div/table/tbody/tr/td/div/label/span/span",
+      "Value": "Checkmark",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[3]/div/div/footer/span/button/span",
+      "Value": "Next Step",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0.5",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[${i}]/div/div/div[1]/ul/li[1]/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${test} == \"#LNF\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${i} + 1;",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=/html/body/div[2]/div[${i}]/div/div/div[1]/ul/li[3]/span",
+      "Value": "test",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "3",
+      "Value": "!timeout_wait",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[${i}]/div/div/div[1]/ul/li[1]/span",
+      "Value": "New Review",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[${i}]/div/div/div[1]/ul/li[2]/span",
+      "Value": "Potential Negative",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[${i}]/div/div/div[1]/ul/li[3]/span",
+      "Value": "New Customer Message",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[3]/div/div/footer/span/button/span",
+      "Value": "Complete",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementNotPresent",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[3]/div/div/footer/span/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

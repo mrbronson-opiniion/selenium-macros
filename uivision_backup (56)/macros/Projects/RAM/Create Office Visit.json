@@ -1,0 +1,120 @@
+{
+  "Name": "Create Office Visit",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "pause",
+      "Target": "500",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForElementPresent",
+      "Target": "xpath=//input",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//input",
+      "Value": "Office Visit",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[6]/div/div/div[1]/ul/li[1]/span",
+      "Value": "Review Request",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[2]/div[8]/div/div/div[1]/ul/li[4]/span",
+      "Value": "Automated",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div[2]/div/div/div/div/input",
+      "Value": "Office Visit",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div/button[2]/span",
+      "Value": "Next",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//input",
+      "Value": "Thanks for the Visit!",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//textarea",
+      "Value": "We are so glad you stopped by! It was great talking with you today. As always, we value your feedback and we'd love it if you'd take a second to let us know how we're doing!",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=tab-SMS",
+      "Value": "SMS",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div/div[2]/div[2]/div/div/div/textarea",
+      "Value": "Thank you so much for choosing ${row[0]}! Please take a few seconds to tell us how we're doing.",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=tab-Follow Ups",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"pane-Follow Ups\"]/div/div[2]/div/div[2]/div/div/i",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div[2]/button[2]/span",
+      "Value": "Next",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div/div[2]/div/button/span",
+      "Value": "Distribute Evenly",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div/div/div[3]/div/div/div[2]/button[2]/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"app\"]/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/button/span",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "waitForPageToLoad",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "Name": "Test",
+  "CreationDate": "2024-2-9",
+  "Commands": [
+    {
+      "Command": "type",
+      "Target": "id=el-id-2159-2524",
+      "Value": "Thank you for staying at Tucker - Century Stone Hill North. We are always looking to improve the experience for our guests, and we would appreciate you taking a minute to tell us more about your recent stay. We hope to see you again soon!\\nIf you would like to stay with us again, feel free to visit our website at www.tuckerstay.com or shoot us an email – our friendly team is always here to help.\\n\\n",
+      "Description": ""
+    }
+  ]
+}
